@@ -3,10 +3,6 @@
 #
 종료 : service mysql stop
 #
-ID : root
-#
-PW : qhdks05!
-#
 Database : Car_WatchoutDB (MySQL)
 #
 Create Table Service (
