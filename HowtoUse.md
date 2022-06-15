@@ -12,8 +12,9 @@ Create Table Service (
 	GPS_X Float(7),
 	GPS_Y Float(7),
 	Video_LINK_TEXT Varchar(64),
-	OX Varchar(2)
+	OX Varchar(1)
 );
 #
 #다운로드 패키지
 php-mysql
+phppyadmin

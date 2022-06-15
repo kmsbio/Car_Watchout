@@ -3,7 +3,7 @@
 
 ### Member
 
-* Jihoon(팀장)
+* Jihoon(팀장) 
 * Minseob(팀원)
 * Soori(팀원)
 

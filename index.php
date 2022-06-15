@@ -8,6 +8,7 @@
 		<h1>자동차 신속대응 시스템</h1>
 
 		<form action="/PHP/request.php" method='post'>
+			ID : <input type="text" name="user_id"/><br>
 			위도(X축) : <input type="number" name="lati"/><br>
 			경도(Y축) : <input type="number" name="long"/><br>
 			비디오 파일 : <input type="file" name="video" accept="video/*"/><br>
