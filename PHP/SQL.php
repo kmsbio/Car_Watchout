@@ -4,27 +4,29 @@
     $user = '';
     $pw = '';
     $dbName = 'Car_WatchoutDB';
-
-	public $mysql = new mysqli($host, $user, $pw, $dbName);
-
-    if($mysql){
-        echo "<br>MySQL 접속 성공";
-    }else{
-        echo "<br>MySQL 접속 실패";
-    }
 	
-
-
 	function storeData($ID,$GPS_X,$GPS_Y) {
-		$time = date('m-d-Y h:i:s a', time());
+		global $host, $user, $pw, $dbName;
+		//global $user;
+		//global $pw;
+		//global $dbName;
+		$mysql = new mysqli($host, $user, $pw, $dbName);
+		if($mysql){
+        	echo "<br>MySQL 접속 성공";
+    	}else{
+        	echo "<br>MySQL 접속 실패";
+    	}
 		$num = checkNum();
 		$link = checkVideo();
 		
-		$result = "INSERT INTO Car_WatchoutDB (NUM,ID,EVENT_TIME,GPS_X,GPS_Y,Video_LINK_TEXT,OX) VALUES ( '$num','$ID','$time','$GPS_X','$GPS_Y','$link','?' )";
-		return $result;
+		$sql = "INSERT INTO Service (NUM,ID,EVENT_TIME,GPS_X,GPS_Y,Video_LINK_TEXT,OX) VALUES ( '$num','$ID',now(),'$GPS_X','$GPS_Y','$link','?' );";
+		echo "<br> 가능해요?";
+		mysqli_query($mysql,$sql);
+		mysqli_close($mysql);
 		}
 							 
 	function checkNum() {
+		$sql = "SELECT count(*) FROM Service;";
 		$result = 0;
 		return $result;
 	}
@@ -33,6 +35,4 @@
 		$result = 0;
 		return $result;
 	}
-							 
-	//mysqli_query( $jb_conn, $jb_sql );
 ?>

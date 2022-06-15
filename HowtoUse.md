@@ -15,6 +15,6 @@ Create Table Service (
 	OX Varchar(1)
 );
 #
-#다운로드 패키지
+# 다운로드 패키지
 php-mysql
 phppyadmin
