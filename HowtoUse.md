@@ -14,6 +14,7 @@ Create Table Service (
 	Video_LINK_TEXT Varchar(64),
 	OX Varchar(1)
 );
+
 #
 # 다운로드 패키지
 php-mysql

@@ -9,8 +9,8 @@
 
 		<form action="/PHP/request.php" method='post'>
 			ID : <input type="text" name="user_id"/><br>
-			위도(X축) : <input type="number" name="lati"/><br>
-			경도(Y축) : <input type="number" name="long"/><br>
+			위도(X축) : <input type="number" name="lati" step="0.0000001"/><br>
+			경도(Y축) : <input type="number" name="long" step="0.0000001"/><br>
 			비디오 파일 : <input type="file" name="video" accept="video/*"/><br>
         <input type="submit" value="submit"/>
     	</form>
