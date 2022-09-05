@@ -2,8 +2,8 @@ us<?php
 	date_default_timezone_set('Asia/Seoul');
 	/*config의 값을 담당하는 SQL 파일*/
 	$host = 'localhost';
-    $user = '';
-    $pw = '';
+    $user = 'root';
+    $pw = 'qhdks05!';
     $dbName = 'Car_WatchoutDB';
 	
 	function storeData($ID,$GPS_X,$GPS_Y) {

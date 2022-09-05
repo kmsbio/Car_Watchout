@@ -13,4 +13,6 @@
 <?php
 	require 'SQL.php';
 	storeData($user_id,$lati,$long);
+
+	exec('../python/main.py')
 ?>
