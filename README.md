@@ -14,4 +14,4 @@
 
 
 ### License
-Yolov5[https://github.com/ultralytics/yolov5] - GPL-3.0 license
+(Yolov5)[https://github.com/ultralytics/yolov5] - GPL-3.0 license
