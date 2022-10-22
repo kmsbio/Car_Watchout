@@ -7,18 +7,20 @@
 	<body>
 		<h1>자동차 신속대응 시스템</h1>
 
-		<form action="/PHP/request.php" method='post'>
+		<form enctype='multipart/form-data' action="/PHP/request.php" method='post'>
 			ID : <input type="text" name="user_id"/><br>
 			위도(X축) : <input type="number" name="lati" step="0.0000001"/><br>
 			경도(Y축) : <input type="number" name="long" step="0.0000001"/><br>
-			비디오 파일 : <input type="file" name="video" accept="video/*"/><br>
-        <input type="submit" value="submit"/>
+			이미지 파일 : <input type="file" name="myimage" accept="image/*" onchange="readURL(this);"/><br>
+			<input type="submit" name="submit" value="submit"/><br>
+			<img id="preview">
     	</form>
 		
+		<!--
 		<form enctype='multipart/form-data' action='/PHP/upload_video.php' method='post'>
 			<input type='file' name='myfile'>
 			<button>보내기</button>
 		</form>
-
+		-->
 	</body>
 </html>
