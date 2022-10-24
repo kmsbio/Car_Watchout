@@ -8,8 +8,8 @@ Create Table Service (
 	NUM Int Primary Key,
 	ID Varchar(24),
 	EVENT_TIME Datetime,
-	GPS_X Float(7),
-	GPS_Y Float(7),
+	GPS_X Float(12),
+	GPS_Y Float(12),
 	Image_LINK_TEXT Varchar(256),
 	OX Varchar(1)
 );

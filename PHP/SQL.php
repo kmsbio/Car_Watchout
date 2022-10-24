@@ -15,7 +15,7 @@
 		$num = checkNum($mysql);
 		$sql = "INSERT INTO Service (NUM,ID,EVENT_TIME,GPS_X,GPS_Y,Image_LINK_TEXT,OX) VALUES ('$num','$ID',now(),'$GPS_X','$GPS_Y','$link','?');";	
 		mysqli_query($mysql,$sql);
-		mysqli_close($mysql);
+		#mysqli_close($mysql);
 	}
 							 
 	function checkNum($mysql) {
@@ -26,14 +26,16 @@
 		return $result[0];
 	}
 
-	function checkOX($mysql,$result) {
-		//인공지능으로 결과가 나온 것을 SQL로 돌립니다.
+	function checkOX($result) {
+		//인공지능으로 결과가 나온 것을 SQL OX 부분에 전달하는 역할입니다.
+		global $mysql;
 		
-		//도로위의 장애물의 기준을 무엇으로 할지 기준 설정 필요
-		$sql = "UPDATE Service set OX='o' where ;";
+		$num = checkNum($mysql) - 1;
+		//echo "여기까지 오셨다고요? $num";
+		$sql = "UPDATE Service set OX='$result' where NUM='$num';";
 		mysqli_query($mysql,$sql);
 		mysqli_close($mysql);
-	}//제작중인 함수
+	}
 
 	function testSQL($mysql) {
 		//모듈테스트를 할때 SQL 작동 여부를 확인합니다.

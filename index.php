@@ -11,16 +11,12 @@
 			ID : <input type="text" name="user_id"/><br>
 			위도(X축) : <input type="number" name="lati" step="0.0000001"/><br>
 			경도(Y축) : <input type="number" name="long" step="0.0000001"/><br>
+			이미지 파일 : <input type="text" name="myimage" "readURL(this);"/><br>
+			<!--
 			이미지 파일 : <input type="file" name="myimage" accept="image/*" onchange="readURL(this);"/><br>
+			-->
 			<input type="submit" name="submit" value="submit"/><br>
 			<img id="preview">
     	</form>
-		
-		<!--
-		<form enctype='multipart/form-data' action='/PHP/upload_video.php' method='post'>
-			<input type='file' name='myfile'>
-			<button>보내기</button>
-		</form>
-		-->
 	</body>
 </html>

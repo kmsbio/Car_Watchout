@@ -12,11 +12,12 @@ function readURL(input) {
   		}
 	}
 
-function inputValue(user_id_input, lati_input, long_input) {
+function inputValue(user_id_input, lati_input, long_input, myimage) {
 	//해당 함수를 통하여 웹앱에 데이터를 넣으면 됩니다.
 	document.getElementsByName('user_id')[0].value = user_id_input;
 	document.getElementsByName('lati')[0].value = lati_input;
 	document.getElementsByName('long')[0].value = long_input;
+	document.getElementsByName('myimage')[0].value = myimage;
 }
 
 function submitData() {

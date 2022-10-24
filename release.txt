@@ -48,3 +48,5 @@ checkNum() 함수를 통하여 row의 행 갯수를 파악
 
 other.php >> 파이썬등의 연계 과정등을 사용하기 위하여 제작한 파일
 아직 제작하지는 않았지만 많은 함수들이 제작될 예정
+
+https://wordbe.tistory.com/entry/Git-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%ACcommit-push-pull-request-merge-%EB%93%B1

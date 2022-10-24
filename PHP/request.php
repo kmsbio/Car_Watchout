@@ -15,5 +15,7 @@
 	storeData($user_id,$lati,$long,$file_route);
 
 	require 'other.php'; //yolo모델을 돌릴수 있는 연결 저장
-	playAI($file_route);
+	$result = playAI($file_route);
+
+	checkOX($result);
 ?>
