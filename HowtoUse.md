@@ -6,7 +6,7 @@ Database : Car_WatchoutDB (MySQL)
 # SQL 제작리스트
 Create Table Service (
 	NUM Int Primary Key,
-	ID Varchar(24),
+	foreign key (ID) references Register(ID),
 	EVENT_TIME Datetime,
 	GPS_X Float(12),
 	GPS_Y Float(12),
@@ -15,10 +15,19 @@ Create Table Service (
 );
 #
 Create Table Register (
-	ID Int Primary Key,
-	PW Varchar(12),
-	Nickname Varchar(12)
+	ID Varchar(24) Primary Key,
+	Name Varchar(10),
+    Birthday Datetime,
+    PW Varchar(24),
+    Email Varchar(30)
 );
+
+이름
+아이디
+생년월일
+비밀번호
+이메일
+
 
 전체 확인
 select * from Service;

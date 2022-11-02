@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+#인공지능을 담당하는 파일
 import torch
 import cv2 as cv
 import numpy as np
@@ -13,7 +15,10 @@ def resultNUM(x):
     
 
 #model costom
-model = torch.hub.load('./', 'custom', path='./weights/best.pt', source='local')
+#model = torch.hub.load('./', 'custom', path='./best.pt', source='local')
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+#model = torch.hub.load('./', 'custom', path='CarWatchoutCPU/python/best.pt', source='local')
+
 
 #변수 선언
 person = 0
@@ -37,4 +42,5 @@ if ra is not None:
     if person == 0 & bus == 0:
     	print("검출X")
     else:
-    	print(f"사람 {person}명, 버스 {bus}개 검출")
+    	print("사람 %d명, 버스 %d개 검출" % (person, bus))
+        #print("A")

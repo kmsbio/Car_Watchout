@@ -1,20 +1,20 @@
 <?php
-	date_default_timezone_set('Asia/Seoul');
+	//사용자가 데이터를 보낼때 처리하는 페이지다.
 
 	$user_id = isset($_POST['user_id']) ? $_POST['user_id'] : "";
 	$lati = isset($_POST['lati']) ? (float) $_POST['lati'] : "";
 	$long = isset($_POST['long']) ? (float) $_POST['long'] : "";
-	
-	echo "ID: " .$user_id ."<br>";
-	echo "lati: " .$lati ."<br>";
-	echo "long: " .$long ."<br>";
+	$base64 = isset($_POST['myimage']) ? $_POST['myimage'] : "";
 
-	require 'upload_image.php'; //이미지 관련 처리 부분 저장
-	
-	require 'SQL.php'; //SQL 관련 함수 저장
+	//(미구현) 이제 안드로이드 폰은 자동으로 첫창으로 넘어갑니다.
+
+	require 'other.php'; // 이미지와 관련된 파이썬 소스코드 모음
+	makeTemp($base64);
+	$file_route = string2IMG();
+
+	require 'SQL.php'; //SQL 관련 소스코드 모음
 	storeData($user_id,$lati,$long,$file_route);
 
-	require 'other.php'; //yolo모델을 돌릴수 있는 연결 저장
 	$result = playAI($file_route);
 
 	checkOX($result);

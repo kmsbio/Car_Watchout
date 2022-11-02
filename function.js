@@ -24,9 +24,3 @@ function submitData() {
 	//해당 함수를 이용해서 전달된 값을 전할 수 있다.
 	document.getElementsByName('submit')[0].click();
 }
-
-function decodeBase64(input) {
-	//해당 함수는 만약 웹앱 작업이 완벽하지 않은 경우에 base64를 이용하여 이미지를 복원하는 함수다.
-	var img = 1;
-	var imgBase64 = decodeURIComponent(atob(input));
-}
