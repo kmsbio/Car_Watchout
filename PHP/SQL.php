@@ -52,6 +52,33 @@
         return $result[0];
     }
 
+    function storeRegister($ID,$Password,$Name,$Birthday,$Email) {
+    	//ID를 생성하면 정보를 저장합니다.
+        global $host, $user, $pw, $dbName;
+		$mysql = new mysqli($host, $user, $pw, $dbName);
+        
+        $sql = "INSERT INTO Register (ID,PW,Name,Birthday,Email) VALUES ('$ID','$Password','$Name','$Birthday','$Email');";
+        mysqli_query($mysql,$sql);
+		mysqli_close($mysql);
+    }
+
+    function checkRegister($ID,$Password) {
+        //ID,PW를 치고 난뒤의 값을 검증합니다.
+        global $host, $user, $pw, $dbName;
+		$mysql = new mysqli($host, $user, $pw, $dbName);
+		
+        $sql = "SELECT count(num) from Register where ID == '$ID' && PW == '$Password'";
+        
+        $result = mysqli_fetch_row($query);
+        
+        if($result == 0) {
+            return 'o';
+		}
+        else {
+        	return 'x';
+        }
+    }
+
 	function testSQL() {
 		//모듈테스트를 할때 SQL 작동 여부를 확인합니다.
         global $host, $user, $pw, $dbName;

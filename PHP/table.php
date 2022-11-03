@@ -3,4 +3,6 @@
 
 	require 'SQL.php';
 	$GPS = findGPS();
+
+	
 ?>

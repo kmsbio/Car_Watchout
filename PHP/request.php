@@ -1,10 +1,10 @@
 <?php
 	//사용자가 데이터를 보낼때 처리하는 페이지다.
 
-	$user_id = isset($_POST['user_id']) ? $_POST['user_id'] : "";
-	$lati = isset($_POST['lati']) ? (float) $_POST['lati'] : "";
-	$long = isset($_POST['long']) ? (float) $_POST['long'] : "";
-	$base64 = isset($_POST['myimage']) ? $_POST['myimage'] : "";
+	$user_id = $_POST['user_id'];
+	$lati = $_POST['lati'];
+	$long = $_POST['long'];
+	$base64 = $_POST['myimage'];
 
 	//(미구현) 이제 안드로이드 폰은 자동으로 첫창으로 넘어갑니다.
 

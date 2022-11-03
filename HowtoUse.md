@@ -22,13 +22,6 @@ Create Table Register (
     Email Varchar(30)
 );
 
-이름
-아이디
-생년월일
-비밀번호
-이메일
-
-
 전체 확인
 select * from Service;
 
