@@ -52,12 +52,12 @@
         return $result[0];
     }
 
-    function storeRegister($ID,$Password,$Name,$Birthday,$Email) {
+    function storeRegister($ID,$Password,$Name,$Email,$Birthday) {
     	//ID를 생성하면 정보를 저장합니다.
         global $host, $user, $pw, $dbName;
 		$mysql = new mysqli($host, $user, $pw, $dbName);
         
-        $sql = "INSERT INTO Register (ID,PW,Name,Birthday,Email) VALUES ('$ID','$Password','$Name','$Birthday','$Email');";
+        $sql = "INSERT INTO Register (ID,PW,Name,Email,Birthday) VALUES ('$ID','$Password','$Name','$Email','$Birthday');";
         mysqli_query($mysql,$sql);
 		mysqli_close($mysql);
     }
@@ -67,15 +67,15 @@
         global $host, $user, $pw, $dbName;
 		$mysql = new mysqli($host, $user, $pw, $dbName);
 		
-        $sql = "SELECT count(num) from Register where ID == '$ID' && PW == '$Password'";
-        
+        $sql = "SELECT count(ID) FROM Register where ID = '$ID' and PW = '$Password';";
+        $query = mysqli_query($mysql,$sql);
         $result = mysqli_fetch_row($query);
-        
-        if($result == 0) {
+        mysqli_close($mysql);
+        if($result[0] == 1) {
             return 'o';
 		}
         else {
-        	return 'x';
+        	return $result[0];
         }
     }
 

@@ -6,8 +6,6 @@
 	$long = $_POST['long'];
 	$base64 = $_POST['myimage'];
 
-	//(미구현) 이제 안드로이드 폰은 자동으로 첫창으로 넘어갑니다.
-
 	require 'other.php'; // 이미지와 관련된 파이썬 소스코드 모음
 	makeTemp($base64);
 	$file_route = string2IMG();

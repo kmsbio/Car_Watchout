@@ -17,7 +17,7 @@ Create Table Service (
 Create Table Register (
 	ID Varchar(24) Primary Key,
 	Name Varchar(10),
-    Birthday Datetime,
+    Birthday Date,
     PW Varchar(24),
     Email Varchar(30)
 );
