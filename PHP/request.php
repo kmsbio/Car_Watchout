@@ -13,7 +13,16 @@
 	require 'SQL.php'; //SQL 관련 소스코드 모음
 	storeData($user_id,$lati,$long,$file_route);
 
-	$result = playAI($file_route);
-
+	$result = playAI($file_route); //결과 값은 여기서 적힌다.
 	checkOX($result);
 ?>
+
+<script>
+    window.onload = function() {
+        postResult();
+    }
+    
+    function postResult() {
+        window.Android.callResult(<?php $result ?>);
+    }
+</script>

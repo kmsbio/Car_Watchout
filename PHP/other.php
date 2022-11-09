@@ -25,8 +25,4 @@
 			return 'o';
 		}
 	}
-
-	function makeDayform($year,$month,$day) {
-        return $result;
-    }
 ?>
