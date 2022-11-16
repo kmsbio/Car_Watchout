@@ -34,12 +34,11 @@ if( !in_array($ext, $allowed_ext) ) {
 // 파일 이동 및 이름 변경
 move_uploaded_file( $_FILES['myimage']['tmp_name'], "$uploads_dir/$name");
 
-// 파일 정보 출력
-echo "<h2>파일 정보</h2>
-<ul>
-	<li>파일명: $name</li>
-	<li>확장자: $ext</li>
-	<li>파일형식: {$_FILES['myimage']['type']}</li>
-	<li>파일크기: {$_FILES['myimage']['size']} 바이트</li>
-</ul>";
+exec("python3 ../python/string2IMG.py '$name' '$user_id'"); //id를 인식하여 이름을 바꾸어주는 함수
+
+	function IMGRename($name,$userid) {
+        //base64를 이미지로 바꾸어주는 함수 입니다.
+        $result = exec("python3 ../python/string2IMG.py '$name' '$user_id'");
+        return $result;
+    }
 ?>

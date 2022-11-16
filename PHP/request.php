@@ -6,23 +6,24 @@
 	$long = $_POST['long'];
 	$base64 = $_POST['myimage'];
 
-	require 'other.php'; // 이미지와 관련된 파이썬 소스코드 모음
-	makeTemp($base64);
-	$file_route = string2IMG();
+    if(!isset($base64)) {
+        echo "이미지가 호출되지 않았습니다";
+    }
 
-	require 'SQL.php'; //SQL 관련 소스코드 모음
-	storeData($user_id,$lati,$long,$file_route);
+    else {
+        	require 'other.php'; // 이미지와 관련된 파이썬 소스코드 모음
+	        makeTemp($base64);
+	        $file_route = string2IMG($user_id);
 
-	$result = playAI($file_route); //결과 값은 여기서 적힌다.
-	checkOX($result);
+	        require 'SQL.php'; //SQL 관련 소스코드 모음
+	        storeData($user_id,$lati,$long,$file_route);
+
+	        $result = playAI($file_route); //결과 값은 여기서 적힌다.
+	        checkOX($result);
+        
+            $result = '전송이 완료 되었습니다';
+    }
+
+echo "<script type='text/javascript' src='../function.js'></script>";
+echo "<script> window.onload = function () { CallAndroid('$result');}</script>";
 ?>
-
-<script>
-    window.onload = function() {
-        postResult();
-    }
-    
-    function postResult() {
-        window.Android.callResult(<?php $result ?>);
-    }
-</script>

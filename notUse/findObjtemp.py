@@ -16,8 +16,16 @@ def resultNUM(x):
 
 
 # model costom
+# model = torch.hub.load('./', 'custom', path='./best.pt', source='local')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='/workspace/CarWatchoutCPU/python/ai/realLast/best.pt')
-
+#모델 성능 컨트롤
+model.conf = 0.35  # NMS confidence threshold
+#       iou = 0.45  # NMS IoU threshold
+#       agnostic = False  # NMS class-agnostic
+#       multi_label = False  # NMS multiple labels per box
+#       classes = None  # (optional list) filter by class, i.e. = [0, 15, 16] for COCO persons, cats and dogs
+#       max_det = 1000  # maximum number of detections per image
+#       amp = False  # Automatic Mixed Precision (AMP) inference
 
 # 변수 선언
 person = 0
@@ -30,7 +38,8 @@ box = 0
 other = 0
 
 
-img = sys.argv[1]
+# '/workspace/Car_Watchout/upload/13.jpg'
+img = 'C:/Users/rlawl/YOLOv5/yolov5-master/data/testdata/box.jpg'
 
 # 객체선언
 results = model(img)
@@ -61,32 +70,35 @@ if ra is not None:
             pass
     #검출 갯수 변수
     sum = person+accident+elk+dog+cat+bird+box+other
-    re_txt = []
+    re_txt = "결과: "
     if sum==0:
         re_txt = "검출X"
     elif person >0:
-        re_txt.append("사람 %d명, " % (person))
+        re_txt = re_txt + ("사람 %d명, " % (person))
     elif accident > 0:
-        re_txt.append("교통사고 발생, ")
+        re_txt= re_txt +("교통사고 발생, ")
     elif elk > 0:
-        re_txt.append("사슴 %d마리, " % (elk))
+        re_txt= re_txt +("사슴 %d마리, " % (elk))
     elif dog > 0:
-        re_txt.append("개 %d마리, " % (dog))
+        re_txt= re_txt +("개 %d마리, " % (dog))
     elif cat > 0:
-        re_txt.append("고양이 %d마리, " % (cat))
+        re_txt= re_txt +("고양이 %d마리, " % (cat))
     elif bird > 0:
-        re_txt.append("새 %d마리, " % (bird))
+        re_txt= re_txt +("새 %d마리, " % (bird))
     elif box > 0:
-        re_txt.append("상자 %d개, " % (box))
+        re_txt= re_txt +("상자 %d개, " % (box))
     elif other>0:
-        re_txt.append("객채 탐지")
+        re_txt= re_txt +("객채 탐지")
     else:
         print("ERROR")
-    
+
     print(re_txt)
+    #문자열 출력
+
+
 
 
 #결과이미지 저장
 results.save(save_dir='/workspace/CarWatchoutCPU/upload/result')
-
-#형 이거 저장 경로 설정해도 그 경로 내부에 폴더가 생성되고 그 내부에 결과값 저장되요 ㄳㄳ
+#결과이미지 출력
+#results.show()

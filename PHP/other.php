@@ -1,9 +1,9 @@
 <?php
 	//이미지와 AI를 돌리는 방법에 관한 함수들 모음이다.
 
-	function string2IMG() {
+	function string2IMG($userid) {
         //base64를 이미지로 바꾸어주는 함수 입니다.
-        $result = exec("python3 ../python/string2IMG.py");
+        $result = exec("python3 ../python/string2IMG.py '$userid'");
         return $result;
     }
 
@@ -18,11 +18,6 @@
 		//AI를 돌린뒤 해당 결과에 따라 문제가 있나 없나 판단하는 함수
 		$result = exec("python3 ../python/findObj.py '$img'");
 		echo "결과 : $result <br>";
-		if($result == "검출X") {
-			return 'x';
-		}
-		else {
-			return 'o';
-		}
+        return $result;
 	}
 ?>

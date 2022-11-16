@@ -3,10 +3,10 @@
 
 	date_default_timezone_set('Asia/Seoul');
 	/*config의 값을 담당하는 SQL 파일*/
-	$host = 'localhost';
-    $user = 'seobi';
-    $pw = 'qhdks10!';
-    $dbName = 'Car_WatchoutDB';
+	$host = '';
+    $user = '';
+    $pw = '';
+    $dbName = '';
 
 	function storeData($ID,$GPS_X,$GPS_Y,$link) {
 		//데이터를 insert로 쌓는 함수 입니다.
@@ -33,8 +33,17 @@
         global $host, $user, $pw, $dbName;
 		$mysql = new mysqli($host, $user, $pw, $dbName);
         
+        $temp = "temp";
+        
+		if($result == "검출X") {
+			$temp = 'x';
+		}
+		else {
+			$temp = 'o';
+		}
+        
 		$num = checkNum($mysql) - 1;
-		$sql = "UPDATE Service set OX='$result' where NUM='$num';";
+		$sql = "UPDATE Service set OX='$temp' where NUM='$num';";
 		mysqli_query($mysql,$sql);
 		mysqli_close($mysql);
 	}
@@ -77,6 +86,21 @@
         else {
         	return $result[0];
         }
+    }
+
+    function checkID($ID) {
+        //ID를 받은 다음 중복을 감지합니다.
+        global $host, $user, $pw, $dbName;
+		$mysql = new mysqli($host, $user, $pw, $dbName);
+        
+        $sql = "SELECT count(ID) FROM Register where ID = '$ID';";
+        $query = mysqli_query($mysql,$sql);
+        $result = mysqli_fetch_row($query);
+        mysqli_close($mysql);
+        if($result[0] == 0) {
+            return 0;
+		}
+        return $result;
     }
 
 	function testSQL() {
