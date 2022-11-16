@@ -17,7 +17,7 @@ def resultNUM(x):
 
 # model costom
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='/workspace/CarWatchoutCPU/python/ai/realLast/best.pt')
-
+model.conf = 0.5
 
 # 변수 선언
 person = 0
@@ -61,32 +61,30 @@ if ra is not None:
             pass
     #검출 갯수 변수
     sum = person+accident+elk+dog+cat+bird+box+other
-    re_txt = []
+    re_txt = "결과: "
     if sum==0:
         re_txt = "검출X"
     elif person >0:
-        re_txt.append("사람 %d명, " % (person))
+        re_txt = re_txt + ("사람 %d명, " % (person))
     elif accident > 0:
-        re_txt.append("교통사고 발생, ")
+        re_txt= re_txt +("교통사고 발생, ")
     elif elk > 0:
-        re_txt.append("사슴 %d마리, " % (elk))
+        re_txt= re_txt +("사슴 %d마리, " % (elk))
     elif dog > 0:
-        re_txt.append("개 %d마리, " % (dog))
+        re_txt= re_txt +("개 %d마리, " % (dog))
     elif cat > 0:
-        re_txt.append("고양이 %d마리, " % (cat))
+        re_txt= re_txt +("고양이 %d마리, " % (cat))
     elif bird > 0:
-        re_txt.append("새 %d마리, " % (bird))
+        re_txt= re_txt +("새 %d마리, " % (bird))
     elif box > 0:
-        re_txt.append("상자 %d개, " % (box))
+        re_txt= re_txt +("상자 %d개, " % (box))
     elif other>0:
-        re_txt.append("객채 탐지")
+        re_txt= re_txt +("객채 탐지")
     else:
-        print("ERROR")
-    
+        re_txt = re_txt + ("ERROR")
+
     print(re_txt)
 
 
 #결과이미지 저장
 results.save(save_dir='/workspace/CarWatchoutCPU/upload/result')
-
-#형 이거 저장 경로 설정해도 그 경로 내부에 폴더가 생성되고 그 내부에 결과값 저장되요 ㄳㄳ

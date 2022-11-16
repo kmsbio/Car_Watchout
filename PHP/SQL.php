@@ -3,10 +3,10 @@
 
 	date_default_timezone_set('Asia/Seoul');
 	/*config의 값을 담당하는 SQL 파일*/
-	$host = '';
-    $user = '';
-    $pw = '';
-    $dbName = '';
+	$host = 'localhost';
+    $user = 'seobi';
+    $pw = 'qhdks10!';
+    $dbName = 'Car_WatchoutDB';
 
 	function storeData($ID,$GPS_X,$GPS_Y,$link) {
 		//데이터를 insert로 쌓는 함수 입니다.

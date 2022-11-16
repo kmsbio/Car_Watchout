@@ -21,7 +21,6 @@
 	        $result = playAI($file_route); //결과 값은 여기서 적힌다.
 	        checkOX($result);
         
-            $result = '전송이 완료 되었습니다';
     }
 
 echo "<script type='text/javascript' src='../function.js'></script>";

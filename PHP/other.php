@@ -17,7 +17,8 @@
 	function playAI($img) {
 		//AI를 돌린뒤 해당 결과에 따라 문제가 있나 없나 판단하는 함수
 		$result = exec("python3 ../python/findObj.py '$img'");
-		echo "결과 : $result <br>";
+        //exec("echo", $result);
+		echo "$result";
         return $result;
 	}
 ?>
