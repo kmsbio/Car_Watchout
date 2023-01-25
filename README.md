@@ -4,23 +4,23 @@
 <img src="./image/stack.png" width="500px"> +PHP
 
 
-### Client (스마트폰)
-* 스마트폰 - 안드로이드 (JAVA)
-* 지도 - 네이버 클라우드
+### Client (android)
+    smartphone - android (JAVA)
+    map - naver cloud
 
 ### Server
-* 클라우드 - 구름IDE
-* OS - Ubuntu(18.04)
-* 프론트엔드 및 웹앱 연동 - Javascript
-* 백엔드 - PHP
-* 이미지 - Python (Base64)
-* SQL - MySQL
+    cloud - groomIDE
+    OS - Ubuntu(18.04)
+    Frontend - Javascript
+    Backend - PHP
+    image processing - Python (Base64)
+    SQL - MySQL
 
 ### AI
-* AI - YOLOv5
-* 데이터 어노테이션 - YoloLabel
-* 인공지능, 크롤링 - Python (pytorch, selenium)
-* {pytorch는 서버와 연동}
+    AI - YOLOv5
+    Data annotation - YoloLabel
+    Using AI, Crawlling - Python (pytorch, selenium)
+    {pytorch는 서버와 연동}
 
 
 ## Process
