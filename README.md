@@ -1,7 +1,7 @@
 # 자동차 장애물 신속 대처 시스템
 
 ## Stack
-<img src="./image/stack.png"> +PHP
+<img src="./image/stack.png" width="500px"> +PHP
 
 
 ### Client (스마트폰)
@@ -24,7 +24,7 @@
 
 
 ## Process
-<img src="./image/UI.png">
+<img src="./image/UI.png" width="500px">
 UI진행은 다음과 같다
 
 
