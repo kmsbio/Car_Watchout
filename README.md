@@ -5,8 +5,6 @@
 
 
 ## Stack
-<img src="./image/stack.png" width="500px"> +PHP
-
 
 ### Client (android)
     smartphone - android (JAVA)
@@ -29,7 +27,7 @@
 
 ## Process
 <img src="./image/UI.png" width="500px">
-UI진행은 다음과 같다
+<img src="./image/process.png" width="500px">
 
 
 ## FileTree
@@ -48,12 +46,6 @@ UI진행은 다음과 같다
     upload - 사진이 저장는 폴더
     index.php - 웹뷰로 들어갈때 쓰는 php 파일
     function.js - 자바스크립트 함수를 모은 파일
-
-
-## Member
-* (팀장) - AI 구현 및 보완
-* <b>(팀원)</b> - 서버 구현 및 보완
-* (팀원) - 임베디드 시스템 작업 및 보완
 
 
 ## License
