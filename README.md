@@ -32,8 +32,8 @@ UI진행은 다음과 같다
 #### PHP
     SQL.php - SQL을 사용 하는 함수를 모은 파일
     checkID.php - 중복되는 ID가 있는지 확인하는 파일
-    login.php	- 로그인을 할 때 결과를 출력하는 파일
-    other.php	- AI프로그램 실행, 파일 디코딩등 함수를 모은 파일
+    login.php - 로그인을 할 때 결과를 출력하는 파일
+    other.php - AI프로그램 실행, 파일 디코딩등 함수를 모은 파일
     register.php - 계정을 만들 때 처리하는 파일
     request.php - 보낸 자료형을 DBMS에 넣고 인공지능을 돌리는 등 핵심이 되는 파일
 #### python
